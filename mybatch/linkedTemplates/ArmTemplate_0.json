@@ -515,6 +515,233 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Delete_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "MarketShareofOperatingSystems",
+						"fileSystem": "input"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Desktop_Sink_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sink Datsets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "6.0 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "9.0 Pie",
+						"type": "String"
+					},
+					{
+						"name": "10.0",
+						"type": "String"
+					},
+					{
+						"name": "7.0 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "11.0",
+						"type": "String"
+					},
+					{
+						"name": "5.1 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "8.1 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "8.0 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "12.0",
+						"type": "String"
+					},
+					{
+						"name": "7.1 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "4.4 KitKat",
+						"type": "String"
+					},
+					{
+						"name": "13.0",
+						"type": "String"
+					},
+					{
+						"name": "5.0 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "4.2 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.1 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.3 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "2.3 Gingerbread",
+						"type": "String"
+					},
+					{
+						"name": "4.0 Ice Cream Sandwich",
+						"type": "String"
+					},
+					{
+						"name": "2.0 Eclair",
+						"type": "String"
+					},
+					{
+						"name": "27.0",
+						"type": "String"
+					},
+					{
+						"name": "2.2 Froyo",
+						"type": "String"
+					},
+					{
+						"name": "14.0",
+						"type": "String"
+					},
+					{
+						"name": "6.1 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Desktop_Source_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Source Datasets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "desktop_os_market_share.csv",
+						"folderPath": "MarketShareofOperatingSystems",
+						"fileSystem": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "Windows",
+						"type": "String"
+					},
+					{
+						"name": "OS X",
+						"type": "String"
+					},
+					{
+						"name": "Unknown",
+						"type": "String"
+					},
+					{
+						"name": "Linux",
+						"type": "String"
+					},
+					{
+						"name": "Chrome OS",
+						"type": "String"
+					},
+					{
+						"name": "iOS",
+						"type": "String"
+					},
+					{
+						"name": "Android",
+						"type": "String"
+					},
+					{
+						"name": "Playstation",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/IOS_Sink_Dataset')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -858,6 +1085,1182 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/MacOs_Sink_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sink Datsets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "6.0 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "9.0 Pie",
+						"type": "String"
+					},
+					{
+						"name": "10.0",
+						"type": "String"
+					},
+					{
+						"name": "7.0 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "11.0",
+						"type": "String"
+					},
+					{
+						"name": "5.1 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "8.1 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "8.0 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "12.0",
+						"type": "String"
+					},
+					{
+						"name": "7.1 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "4.4 KitKat",
+						"type": "String"
+					},
+					{
+						"name": "13.0",
+						"type": "String"
+					},
+					{
+						"name": "5.0 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "4.2 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.1 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.3 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "2.3 Gingerbread",
+						"type": "String"
+					},
+					{
+						"name": "4.0 Ice Cream Sandwich",
+						"type": "String"
+					},
+					{
+						"name": "2.0 Eclair",
+						"type": "String"
+					},
+					{
+						"name": "27.0",
+						"type": "String"
+					},
+					{
+						"name": "2.2 Froyo",
+						"type": "String"
+					},
+					{
+						"name": "14.0",
+						"type": "String"
+					},
+					{
+						"name": "6.1 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MacOs_Source_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Source Datasets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "macos_version_market_share.csv",
+						"folderPath": "MarketShareofOperatingSystems",
+						"fileSystem": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "macOS Catalina",
+						"type": "String"
+					},
+					{
+						"name": "macOS High Sierra",
+						"type": "String"
+					},
+					{
+						"name": "macOS Mojave",
+						"type": "String"
+					},
+					{
+						"name": "macOS Sierra",
+						"type": "String"
+					},
+					{
+						"name": "OS X El Capitan",
+						"type": "String"
+					},
+					{
+						"name": "OS X 10.10",
+						"type": "String"
+					},
+					{
+						"name": "OS X Mavericks",
+						"type": "String"
+					},
+					{
+						"name": "mac OS X Snow Leopard",
+						"type": "String"
+					},
+					{
+						"name": "OS X Mountain Lion",
+						"type": "String"
+					},
+					{
+						"name": "mac OS X Lion",
+						"type": "String"
+					},
+					{
+						"name": "macOS Big Sur 11.2",
+						"type": "String"
+					},
+					{
+						"name": "macOS Big Sur 11.1",
+						"type": "String"
+					},
+					{
+						"name": "macOS Big Sur 11.0",
+						"type": "String"
+					},
+					{
+						"name": "mac OS X Leopard",
+						"type": "String"
+					},
+					{
+						"name": "macOS Big Sur 10.16",
+						"type": "String"
+					},
+					{
+						"name": "mac OS X Tiger",
+						"type": "String"
+					},
+					{
+						"name": "macOS Big Sur 11.3",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MobileOS_Source_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Source Datasets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "mobile_os_market_share.csv",
+						"folderPath": "MarketShareofOperatingSystems",
+						"fileSystem": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "6.0 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "9.0 Pie",
+						"type": "String"
+					},
+					{
+						"name": "10.0",
+						"type": "String"
+					},
+					{
+						"name": "7.0 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "11.0",
+						"type": "String"
+					},
+					{
+						"name": "5.1 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "8.1 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "8.0 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "12.0",
+						"type": "String"
+					},
+					{
+						"name": "7.1 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "4.4 KitKat",
+						"type": "String"
+					},
+					{
+						"name": "13.0",
+						"type": "String"
+					},
+					{
+						"name": "5.0 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "4.2 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.1 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.3 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "2.3 Gingerbread",
+						"type": "String"
+					},
+					{
+						"name": "4.0 Ice Cream Sandwich",
+						"type": "String"
+					},
+					{
+						"name": "2.0 Eclair",
+						"type": "String"
+					},
+					{
+						"name": "27.0",
+						"type": "String"
+					},
+					{
+						"name": "2.2 Froyo",
+						"type": "String"
+					},
+					{
+						"name": "14.0",
+						"type": "String"
+					},
+					{
+						"name": "6.1 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MobileOs_Sink_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sink Datsets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "6.0 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "9.0 Pie",
+						"type": "String"
+					},
+					{
+						"name": "10.0",
+						"type": "String"
+					},
+					{
+						"name": "7.0 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "11.0",
+						"type": "String"
+					},
+					{
+						"name": "5.1 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "8.1 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "8.0 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "12.0",
+						"type": "String"
+					},
+					{
+						"name": "7.1 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "4.4 KitKat",
+						"type": "String"
+					},
+					{
+						"name": "13.0",
+						"type": "String"
+					},
+					{
+						"name": "5.0 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "4.2 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.1 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.3 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "2.3 Gingerbread",
+						"type": "String"
+					},
+					{
+						"name": "4.0 Ice Cream Sandwich",
+						"type": "String"
+					},
+					{
+						"name": "2.0 Eclair",
+						"type": "String"
+					},
+					{
+						"name": "27.0",
+						"type": "String"
+					},
+					{
+						"name": "2.2 Froyo",
+						"type": "String"
+					},
+					{
+						"name": "14.0",
+						"type": "String"
+					},
+					{
+						"name": "6.1 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/OS_Combined_Source_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Source Datasets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "os_combined_market_share.csv",
+						"folderPath": "MarketShareofOperatingSystems",
+						"fileSystem": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "Windows",
+						"type": "String"
+					},
+					{
+						"name": "Android",
+						"type": "String"
+					},
+					{
+						"name": "iOS",
+						"type": "String"
+					},
+					{
+						"name": "OS X",
+						"type": "String"
+					},
+					{
+						"name": "Unknown",
+						"type": "String"
+					},
+					{
+						"name": "Linux",
+						"type": "String"
+					},
+					{
+						"name": "Series 40",
+						"type": "String"
+					},
+					{
+						"name": "SymbianOS",
+						"type": "String"
+					},
+					{
+						"name": "Samsung",
+						"type": "String"
+					},
+					{
+						"name": "BlackBerry OS",
+						"type": "String"
+					},
+					{
+						"name": "Chrome OS",
+						"type": "String"
+					},
+					{
+						"name": "Nokia Unknown",
+						"type": "String"
+					},
+					{
+						"name": "Playstation",
+						"type": "String"
+					},
+					{
+						"name": "Sony Ericsson",
+						"type": "String"
+					},
+					{
+						"name": "KaiOS",
+						"type": "String"
+					},
+					{
+						"name": "Xbox",
+						"type": "String"
+					},
+					{
+						"name": "bada",
+						"type": "String"
+					},
+					{
+						"name": "Tizen",
+						"type": "String"
+					},
+					{
+						"name": "LG",
+						"type": "String"
+					},
+					{
+						"name": "Nintendo",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Os_Combined_Sink_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sink Datsets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "6.0 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "9.0 Pie",
+						"type": "String"
+					},
+					{
+						"name": "10.0",
+						"type": "String"
+					},
+					{
+						"name": "7.0 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "11.0",
+						"type": "String"
+					},
+					{
+						"name": "5.1 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "8.1 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "8.0 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "12.0",
+						"type": "String"
+					},
+					{
+						"name": "7.1 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "4.4 KitKat",
+						"type": "String"
+					},
+					{
+						"name": "13.0",
+						"type": "String"
+					},
+					{
+						"name": "5.0 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "4.2 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.1 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.3 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "2.3 Gingerbread",
+						"type": "String"
+					},
+					{
+						"name": "4.0 Ice Cream Sandwich",
+						"type": "String"
+					},
+					{
+						"name": "2.0 Eclair",
+						"type": "String"
+					},
+					{
+						"name": "27.0",
+						"type": "String"
+					},
+					{
+						"name": "2.2 Froyo",
+						"type": "String"
+					},
+					{
+						"name": "14.0",
+						"type": "String"
+					},
+					{
+						"name": "6.1 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Tablet_Sink_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sink Datsets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "6.0 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "9.0 Pie",
+						"type": "String"
+					},
+					{
+						"name": "10.0",
+						"type": "String"
+					},
+					{
+						"name": "7.0 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "11.0",
+						"type": "String"
+					},
+					{
+						"name": "5.1 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "8.1 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "8.0 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "12.0",
+						"type": "String"
+					},
+					{
+						"name": "7.1 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "4.4 KitKat",
+						"type": "String"
+					},
+					{
+						"name": "13.0",
+						"type": "String"
+					},
+					{
+						"name": "5.0 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "4.2 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.1 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.3 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "2.3 Gingerbread",
+						"type": "String"
+					},
+					{
+						"name": "4.0 Ice Cream Sandwich",
+						"type": "String"
+					},
+					{
+						"name": "2.0 Eclair",
+						"type": "String"
+					},
+					{
+						"name": "27.0",
+						"type": "String"
+					},
+					{
+						"name": "2.2 Froyo",
+						"type": "String"
+					},
+					{
+						"name": "14.0",
+						"type": "String"
+					},
+					{
+						"name": "6.1 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Tablet_Source_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Source Datasets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "tablet_os_market_share.csv",
+						"folderPath": "MarketShareofOperatingSystems",
+						"fileSystem": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "iOS",
+						"type": "String"
+					},
+					{
+						"name": "Android",
+						"type": "String"
+					},
+					{
+						"name": "Linux",
+						"type": "String"
+					},
+					{
+						"name": "Windows",
+						"type": "String"
+					},
+					{
+						"name": "BlackBerry OS",
+						"type": "String"
+					},
+					{
+						"name": "Unknown",
+						"type": "String"
+					},
+					{
+						"name": "webOS",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Windows_Sink_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sink Datsets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "6.0 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "9.0 Pie",
+						"type": "String"
+					},
+					{
+						"name": "10.0",
+						"type": "String"
+					},
+					{
+						"name": "7.0 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "11.0",
+						"type": "String"
+					},
+					{
+						"name": "5.1 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "8.1 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "8.0 Oreo",
+						"type": "String"
+					},
+					{
+						"name": "12.0",
+						"type": "String"
+					},
+					{
+						"name": "7.1 Nougat",
+						"type": "String"
+					},
+					{
+						"name": "4.4 KitKat",
+						"type": "String"
+					},
+					{
+						"name": "13.0",
+						"type": "String"
+					},
+					{
+						"name": "5.0 Lollipop",
+						"type": "String"
+					},
+					{
+						"name": "4.2 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.1 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "4.3 Jelly Bean",
+						"type": "String"
+					},
+					{
+						"name": "2.3 Gingerbread",
+						"type": "String"
+					},
+					{
+						"name": "4.0 Ice Cream Sandwich",
+						"type": "String"
+					},
+					{
+						"name": "2.0 Eclair",
+						"type": "String"
+					},
+					{
+						"name": "27.0",
+						"type": "String"
+					},
+					{
+						"name": "2.2 Froyo",
+						"type": "String"
+					},
+					{
+						"name": "14.0",
+						"type": "String"
+					},
+					{
+						"name": "6.1 Marshmallow",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Windows_Source_Dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Source Datasets"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "windows_version_market_share.csv",
+						"folderPath": "MarketShareofOperatingSystems",
+						"fileSystem": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "Win7",
+						"type": "String"
+					},
+					{
+						"name": "WinXP",
+						"type": "String"
+					},
+					{
+						"name": "Win10",
+						"type": "String"
+					},
+					{
+						"name": "WinVista",
+						"type": "String"
+					},
+					{
+						"name": "Win8.1",
+						"type": "String"
+					},
+					{
+						"name": "Win8",
+						"type": "String"
+					},
+					{
+						"name": "Win11",
+						"type": "String"
+					},
+					{
+						"name": "Win2003",
+						"type": "String"
+					},
+					{
+						"name": "Win2000",
+						"type": "String"
+					},
+					{
+						"name": "Win98",
+						"type": "String"
+					},
+					{
+						"name": "Win8.1 RT",
+						"type": "String"
+					},
+					{
+						"name": "WinME",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureBatch1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -880,271 +2283,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStoragegen2')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/loadfiles')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy IOS",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "IOS_Source_Dataset",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "IOS_Sink_Dataset",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "Copy Android",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "Copy IOS",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "Android_Source_Dataset",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Android_Sink_Dataset",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "Copy Desktop",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"enableStaging": false
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2023-12-20T03:59:02Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/IOS_Source_Dataset')]",
-				"[concat(variables('factoryId'), '/datasets/IOS_Sink_Dataset')]",
-				"[concat(variables('factoryId'), '/datasets/Android_Source_Dataset')]",
-				"[concat(variables('factoryId'), '/datasets/Android_Sink_Dataset')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/unzipping')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "This pipeline unzip file",
-				"activities": [
-					{
-						"name": "unzipping",
-						"description": "This custom activity unzip the given file and store the unzipped folder back to storage account",
-						"type": "Custom",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"command": "cmd /c python unzip.py",
-							"resourceLinkedService": {
-								"referenceName": "AzureBlobStoragegen2",
-								"type": "LinkedServiceReference"
-							},
-							"folderPath": "input",
-							"referenceObjects": {
-								"linkedServices": [],
-								"datasets": []
-							}
-						},
-						"linkedServiceName": {
-							"referenceName": "AzureBatch1",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2023-12-19T13:49:22Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStoragegen2')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBatch1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MarketShareofOperatingSystems')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Source to landing",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "unzipping",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "Landing to Raw",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "Source to landing",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "loadfiles",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2023-12-20T03:59:02Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/unzipping')]",
-				"[concat(variables('factoryId'), '/pipelines/loadfiles')]"
 			]
 		}
 	]
