@@ -1,0 +1,308 @@
+{
+	"name": "IOS_Source_Dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1MovingFiles",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source Datasets"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "ios_version_market_share.csv",
+				"folderPath": "MarketShareofOperatingSystems",
+				"fileSystem": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "iOS 10.3",
+				"type": "String"
+			},
+			{
+				"name": "iOS 12.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 13.3",
+				"type": "String"
+			},
+			{
+				"name": "iOS 11.2",
+				"type": "String"
+			},
+			{
+				"name": "iOS 11.4",
+				"type": "String"
+			},
+			{
+				"name": "iOS 14.4",
+				"type": "String"
+			},
+			{
+				"name": "iOS 12.4",
+				"type": "String"
+			},
+			{
+				"name": "iOS 15.6",
+				"type": "String"
+			},
+			{
+				"name": "iOS 12.3",
+				"type": "String"
+			},
+			{
+				"name": "iOS 11.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 9.3",
+				"type": "String"
+			},
+			{
+				"name": "iOS 11.3",
+				"type": "String"
+			},
+			{
+				"name": "iOS 16.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 16.3",
+				"type": "String"
+			},
+			{
+				"name": "iOS 14.7",
+				"type": "String"
+			},
+			{
+				"name": "iOS 14.6",
+				"type": "String"
+			},
+			{
+				"name": "iOS 15.5",
+				"type": "String"
+			},
+			{
+				"name": "iOS 12.2",
+				"type": "String"
+			},
+			{
+				"name": "iOS 13.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 11.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 12.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 13.5",
+				"type": "String"
+			},
+			{
+				"name": "iOS 16.6",
+				"type": "String"
+			},
+			{
+				"name": "iOS 14.8",
+				"type": "String"
+			},
+			{
+				"name": "iOS 14.2",
+				"type": "String"
+			},
+			{
+				"name": "iOS 15.4",
+				"type": "String"
+			},
+			{
+				"name": "iOS 16.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 15.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 13.6",
+				"type": "String"
+			},
+			{
+				"name": "iOS 15.3",
+				"type": "String"
+			},
+			{
+				"name": "iOS 10.2",
+				"type": "String"
+			},
+			{
+				"name": "iOS 16.5",
+				"type": "String"
+			},
+			{
+				"name": "iOS 13.4",
+				"type": "String"
+			},
+			{
+				"name": "iOS 12.5",
+				"type": "String"
+			},
+			{
+				"name": "iOS 14.3",
+				"type": "String"
+			},
+			{
+				"name": "iOS 16.2",
+				"type": "String"
+			},
+			{
+				"name": "iOS 13.7",
+				"type": "String"
+			},
+			{
+				"name": "iOS 14.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 15.7",
+				"type": "String"
+			},
+			{
+				"name": "iOS 15.2",
+				"type": "String"
+			},
+			{
+				"name": "iOS 16.4",
+				"type": "String"
+			},
+			{
+				"name": "iOS 15.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 14.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 13.2",
+				"type": "String"
+			},
+			{
+				"name": "iOS 10.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 10.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 17.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 14.5",
+				"type": "String"
+			},
+			{
+				"name": "iOS 7.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 7.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 6.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 17.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 9.2",
+				"type": "String"
+			},
+			{
+				"name": "iOS 13.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 8.4",
+				"type": "String"
+			},
+			{
+				"name": "iOS 8.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 16.7",
+				"type": "String"
+			},
+			{
+				"name": "iOS 9.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 6.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 5.1",
+				"type": "String"
+			},
+			{
+				"name": "iOS 8.3",
+				"type": "String"
+			},
+			{
+				"name": "iOS 9.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 5.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 8.0",
+				"type": "String"
+			},
+			{
+				"name": "iOS 8.2",
+				"type": "String"
+			},
+			{
+				"name": "iOS 4.3",
+				"type": "String"
+			},
+			{
+				"name": "iOS 15.8",
+				"type": "String"
+			},
+			{
+				"name": "iOS 3.2",
+				"type": "String"
+			},
+			{
+				"name": "Other",
+				"type": "String"
+			}
+		]
+	}
+}
