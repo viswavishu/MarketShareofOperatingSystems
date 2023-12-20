@@ -1080,7 +1080,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Desktop_output_dataset",
+						"referenceName": "Ios_output_dataset",
 						"type": "DatasetReference"
 					}
 				]
