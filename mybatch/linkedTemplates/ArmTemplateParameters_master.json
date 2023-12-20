@@ -14,6 +14,9 @@
 		"AzureDataLakeStorage1MovingFiles_accountKey": {
 			"value": ""
 		},
+		"Databricks_accessToken": {
+			"value": ""
+		},
 		"AzureBatch1_properties_typeProperties_batchUri": {
 			"value": "https://unzipping.eastus.batch.azure.com"
 		},
@@ -25,6 +28,9 @@
 		},
 		"AzureDataLakeStorage1MovingFiles_properties_typeProperties_url": {
 			"value": "https://batchdotnet.dfs.core.windows.net/"
+		},
+		"Databricks_properties_typeProperties_existingClusterId": {
+			"value": "1220-053906-bfmylb4"
 		},
 		"containerUri": {
 			"value": ""

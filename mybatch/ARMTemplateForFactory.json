@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1MovingFiles'"
 		},
+		"Databricks_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'Databricks'"
+		},
 		"AzureBatch1_properties_typeProperties_batchUri": {
 			"type": "string",
 			"defaultValue": "https://unzipping.eastus.batch.azure.com"
@@ -34,6 +38,10 @@
 		"AzureDataLakeStorage1MovingFiles_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://batchdotnet.dfs.core.windows.net/"
+		},
+		"Databricks_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "1220-053906-bfmylb4"
 		}
 	},
 	"variables": {
@@ -151,6 +159,33 @@
 							"waitOnCompletion": true,
 							"parameters": {}
 						}
+					},
+					{
+						"name": "MarketShareofOperatingSystems",
+						"type": "DatabricksNotebook",
+						"dependsOn": [
+							{
+								"activity": "Execute Delete Pipeline",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"notebookPath": "/Users/viswavishu0110@gmail.com/Projects/MarketShareofOperatingSystems"
+						},
+						"linkedServiceName": {
+							"referenceName": "Databricks",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"policy": {
@@ -162,7 +197,8 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/unzipping')]",
 				"[concat(variables('factoryId'), '/pipelines/loadfiles')]",
-				"[concat(variables('factoryId'), '/pipelines/Delete Source Unzipped File')]"
+				"[concat(variables('factoryId'), '/pipelines/Delete Source Unzipped File')]",
+				"[concat(variables('factoryId'), '/linkedServices/Databricks')]"
 			]
 		},
 		{
@@ -2967,6 +3003,24 @@
 						"type": "SecureString",
 						"value": "[parameters('AzureDataLakeStorage1MovingFiles_accountKey')]"
 					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Databricks')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "https://adb-8603468485541591.11.azuredatabricks.net",
+					"accessToken": {
+						"type": "SecureString",
+						"value": "[parameters('Databricks_accessToken')]"
+					},
+					"existingClusterId": "[parameters('Databricks_properties_typeProperties_existingClusterId')]"
 				}
 			},
 			"dependsOn": []

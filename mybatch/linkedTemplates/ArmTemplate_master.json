@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1MovingFiles'"
 		},
+		"Databricks_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'Databricks'"
+		},
 		"AzureBatch1_properties_typeProperties_batchUri": {
 			"type": "string",
 			"defaultValue": "https://unzipping.eastus.batch.azure.com"
@@ -34,6 +38,10 @@
 		"AzureDataLakeStorage1MovingFiles_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://batchdotnet.dfs.core.windows.net/"
+		},
+		"Databricks_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "1220-053906-bfmylb4"
 		},
 		"containerUri": {
 			"type": "string",
@@ -68,20 +76,14 @@
 					"AzureDataLakeStorage1MovingFiles_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1MovingFiles_accountKey')]"
 					},
-					"AzureBatch1_accessKey": {
-						"value": "[parameters('AzureBatch1_accessKey')]"
+					"Databricks_accessToken": {
+						"value": "[parameters('Databricks_accessToken')]"
 					},
 					"AzureDataLakeStorage1MovingFiles_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1MovingFiles_properties_typeProperties_url')]"
 					},
-					"AzureBatch1_properties_typeProperties_batchUri": {
-						"value": "[parameters('AzureBatch1_properties_typeProperties_batchUri')]"
-					},
-					"AzureBatch1_properties_typeProperties_poolName": {
-						"value": "[parameters('AzureBatch1_properties_typeProperties_poolName')]"
-					},
-					"AzureBatch1_properties_typeProperties_accountName": {
-						"value": "[parameters('AzureBatch1_properties_typeProperties_accountName')]"
+					"Databricks_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('Databricks_properties_typeProperties_existingClusterId')]"
 					}
 				}
 			},
@@ -100,6 +102,18 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureBatch1_accessKey": {
+						"value": "[parameters('AzureBatch1_accessKey')]"
+					},
+					"AzureBatch1_properties_typeProperties_batchUri": {
+						"value": "[parameters('AzureBatch1_properties_typeProperties_batchUri')]"
+					},
+					"AzureBatch1_properties_typeProperties_poolName": {
+						"value": "[parameters('AzureBatch1_properties_typeProperties_poolName')]"
+					},
+					"AzureBatch1_properties_typeProperties_accountName": {
+						"value": "[parameters('AzureBatch1_properties_typeProperties_accountName')]"
 					}
 				}
 			},
