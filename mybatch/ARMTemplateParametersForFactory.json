@@ -11,7 +11,7 @@
 		"AzureBlobStoragegen2_connectionString": {
 			"value": ""
 		},
-		"AzureDataLakeStorage1_accountKey": {
+		"AzureDataLakeStorage1MovingFiles_accountKey": {
 			"value": ""
 		},
 		"AzureBatch1_properties_typeProperties_batchUri": {
@@ -23,7 +23,7 @@
 		"AzureBatch1_properties_typeProperties_accountName": {
 			"value": "unzipping"
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"AzureDataLakeStorage1MovingFiles_properties_typeProperties_url": {
 			"value": "https://batchdotnet.dfs.core.windows.net/"
 		}
 	}

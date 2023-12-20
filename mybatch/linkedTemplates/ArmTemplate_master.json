@@ -15,9 +15,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStoragegen2'"
 		},
-		"AzureDataLakeStorage1_accountKey": {
+		"AzureDataLakeStorage1MovingFiles_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1MovingFiles'"
 		},
 		"AzureBatch1_properties_typeProperties_batchUri": {
 			"type": "string",
@@ -31,7 +31,7 @@
 			"type": "string",
 			"defaultValue": "unzipping"
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"AzureDataLakeStorage1MovingFiles_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://batchdotnet.dfs.core.windows.net/"
 		},
@@ -65,14 +65,14 @@
 					"AzureBlobStoragegen2_connectionString": {
 						"value": "[parameters('AzureBlobStoragegen2_connectionString')]"
 					},
-					"AzureDataLakeStorage1_accountKey": {
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					"AzureDataLakeStorage1MovingFiles_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1MovingFiles_accountKey')]"
 					},
 					"AzureBatch1_accessKey": {
 						"value": "[parameters('AzureBatch1_accessKey')]"
 					},
-					"AzureDataLakeStorage1_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					"AzureDataLakeStorage1MovingFiles_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1MovingFiles_properties_typeProperties_url')]"
 					},
 					"AzureBatch1_properties_typeProperties_batchUri": {
 						"value": "[parameters('AzureBatch1_properties_typeProperties_batchUri')]"

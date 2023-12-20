@@ -15,9 +15,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStoragegen2'"
 		},
-		"AzureDataLakeStorage1_accountKey": {
+		"AzureDataLakeStorage1MovingFiles_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1MovingFiles'"
 		},
 		"AzureBatch1_properties_typeProperties_batchUri": {
 			"type": "string",
@@ -31,7 +31,7 @@
 			"type": "string",
 			"defaultValue": "unzipping"
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"AzureDataLakeStorage1MovingFiles_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://batchdotnet.dfs.core.windows.net/"
 		}
@@ -100,734 +100,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy Android",
-						"description": "",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Date",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Date",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "6.0 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "6.0 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "9.0 Pie",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "9.0 Pie",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "10.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "10.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "7.0 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "7.0 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "11.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "11.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "5.1 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "5.1 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "8.1 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "8.1 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "8.0 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "8.0 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "12.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "12.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "7.1 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "7.1 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.4 KitKat",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.4 KitKat",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "13.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "13.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "5.0 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "5.0 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.2 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.2 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.1 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.1 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.3 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.3 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "2.3 Gingerbread",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "2.3 Gingerbread",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.0 Ice Cream Sandwich",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.0 Ice Cream Sandwich",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "2.0 Eclair",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "2.0 Eclair",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "27.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "27.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "2.2 Froyo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "2.2 Froyo",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "14.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "14.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "6.1 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "6.1 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Other",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Other",
-											"type": "String",
-											"physicalType": "String"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "Android_source_dataset",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Android_ouput_dataset",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "Copy desktop",
-						"description": "",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Date",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Date",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "6.0 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "6.0 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "9.0 Pie",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "9.0 Pie",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "10.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "10.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "7.0 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "7.0 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "11.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "11.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "5.1 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "5.1 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "8.1 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "8.1 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "8.0 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "8.0 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "12.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "12.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "7.1 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "7.1 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.4 KitKat",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.4 KitKat",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "13.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "13.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "5.0 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "5.0 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.2 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.2 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.1 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.1 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.3 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.3 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "2.3 Gingerbread",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "2.3 Gingerbread",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.0 Ice Cream Sandwich",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.0 Ice Cream Sandwich",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "2.0 Eclair",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "2.0 Eclair",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "27.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "27.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "2.2 Froyo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "2.2 Froyo",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "14.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "14.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "6.1 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "6.1 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Other",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Other",
-											"type": "String",
-											"physicalType": "String"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "Desktop_source_dataset",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Desktop_output_dataset",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
 						"name": "Copy IOS",
-						"description": "",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -864,308 +137,6 @@
 							"enableStaging": false,
 							"translator": {
 								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Date",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Date",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "6.0 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "6.0 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "9.0 Pie",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "9.0 Pie",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "10.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "10.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "7.0 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "7.0 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "11.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "11.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "5.1 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "5.1 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "8.1 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "8.1 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "8.0 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "8.0 Oreo",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "12.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "12.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "7.1 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "7.1 Nougat",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.4 KitKat",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.4 KitKat",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "13.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "13.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "5.0 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "5.0 Lollipop",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.2 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.2 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.1 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.1 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.3 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.3 Jelly Bean",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "2.3 Gingerbread",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "2.3 Gingerbread",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "4.0 Ice Cream Sandwich",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "4.0 Ice Cream Sandwich",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "2.0 Eclair",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "2.0 Eclair",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "27.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "27.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "2.2 Froyo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "2.2 Froyo",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "14.0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "14.0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "6.1 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "6.1 Marshmallow",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Other",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Other",
-											"type": "String",
-											"physicalType": "String"
-										}
-									}
-								],
 								"typeConversion": true,
 								"typeConversionSettings": {
 									"allowDataTruncation": true,
@@ -1175,18 +146,101 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "Ios_input_dataset",
+								"referenceName": "IOS_Source_Dataset",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "Desktop_output_dataset",
+								"referenceName": "IOS_Sink_Dataset",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Copy Android",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Copy IOS",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Android_Source_Dataset",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Android_Sink_Dataset",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Copy Desktop",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"enableStaging": false
+						}
 					}
 				],
 				"policy": {
@@ -1196,11 +250,10 @@
 				"lastPublishTime": "2023-12-20T03:59:02Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/Android_source_dataset')]",
-				"[concat(variables('factoryId'), '/datasets/Android_ouput_dataset')]",
-				"[concat(variables('factoryId'), '/datasets/Desktop_source_dataset')]",
-				"[concat(variables('factoryId'), '/datasets/Desktop_output_dataset')]",
-				"[concat(variables('factoryId'), '/datasets/Ios_input_dataset')]"
+				"[concat(variables('factoryId'), '/datasets/IOS_Source_Dataset')]",
+				"[concat(variables('factoryId'), '/datasets/IOS_Sink_Dataset')]",
+				"[concat(variables('factoryId'), '/datasets/Android_Source_Dataset')]",
+				"[concat(variables('factoryId'), '/datasets/Android_Sink_Dataset')]"
 			]
 		},
 		{
@@ -1253,16 +306,16 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Android_ouput_dataset')]",
+			"name": "[concat(parameters('factoryName'), '/Android_Sink_Dataset')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "Output datasets"
+					"name": "Sink Datsets"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -1276,23 +329,304 @@
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
-				"schema": []
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "iOS 10.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 11.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 11.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.6",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 11.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 9.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 11.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.7",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.6",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.5",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 11.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.5",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.6",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.8",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.6",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 10.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.5",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.5",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.7",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.7",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 10.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 10.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 17.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.5",
+						"type": "String"
+					},
+					{
+						"name": "iOS 7.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 7.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 6.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 17.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 9.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 8.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 8.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.7",
+						"type": "String"
+					},
+					{
+						"name": "iOS 9.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 6.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 5.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 8.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 9.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 5.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 8.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 8.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 4.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.8",
+						"type": "String"
+					},
+					{
+						"name": "iOS 3.2",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Android_source_dataset')]",
+			"name": "[concat(parameters('factoryName'), '/Android_Source_Dataset')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "Input datasets"
+					"name": "Source Datasets"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -1412,17 +746,20 @@
 				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Desktop_output_dataset')]",
+			"name": "[concat(parameters('factoryName'), '/IOS_Sink_Dataset')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sink Datsets"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -1439,90 +776,20 @@
 				"schema": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Desktop_source_dataset')]",
+			"name": "[concat(parameters('factoryName'), '/IOS_Source_Dataset')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
+					"referenceName": "AzureDataLakeStorage1MovingFiles",
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "Input datasets"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": "desktop_os_market_share.csv",
-						"folderPath": "MarketShareofOperatingSystems",
-						"fileSystem": "input"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "Date",
-						"type": "String"
-					},
-					{
-						"name": "Windows",
-						"type": "String"
-					},
-					{
-						"name": "OS X",
-						"type": "String"
-					},
-					{
-						"name": "Unknown",
-						"type": "String"
-					},
-					{
-						"name": "Linux",
-						"type": "String"
-					},
-					{
-						"name": "Chrome OS",
-						"type": "String"
-					},
-					{
-						"name": "iOS",
-						"type": "String"
-					},
-					{
-						"name": "Android",
-						"type": "String"
-					},
-					{
-						"name": "Playstation",
-						"type": "String"
-					},
-					{
-						"name": "Other",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Ios_input_dataset')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
+					"name": "Source Datasets"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -1538,10 +805,291 @@
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
-				"schema": []
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "iOS 10.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 11.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 11.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.6",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 11.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 9.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 11.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.7",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.6",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.5",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 11.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.5",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.6",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.8",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.6",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 10.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.5",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 12.5",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.7",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.7",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 10.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 10.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 17.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 14.5",
+						"type": "String"
+					},
+					{
+						"name": "iOS 7.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 7.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 6.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 17.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 9.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 13.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 8.4",
+						"type": "String"
+					},
+					{
+						"name": "iOS 8.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 16.7",
+						"type": "String"
+					},
+					{
+						"name": "iOS 9.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 6.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 5.1",
+						"type": "String"
+					},
+					{
+						"name": "iOS 8.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 9.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 5.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 8.0",
+						"type": "String"
+					},
+					{
+						"name": "iOS 8.2",
+						"type": "String"
+					},
+					{
+						"name": "iOS 4.3",
+						"type": "String"
+					},
+					{
+						"name": "iOS 15.8",
+						"type": "String"
+					},
+					{
+						"name": "iOS 3.2",
+						"type": "String"
+					},
+					{
+						"name": "Other",
+						"type": "String"
+					}
+				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1MovingFiles')]"
 			]
 		},
 		{
@@ -1583,17 +1131,17 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1MovingFiles')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
+					"url": "[parameters('AzureDataLakeStorage1MovingFiles_properties_typeProperties_url')]",
 					"accountKey": {
 						"type": "SecureString",
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+						"value": "[parameters('AzureDataLakeStorage1MovingFiles_accountKey')]"
 					}
 				}
 			},
