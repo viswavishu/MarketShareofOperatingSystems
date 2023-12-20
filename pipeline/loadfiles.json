@@ -1,0 +1,1093 @@
+{
+	"name": "loadfiles",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy Android",
+				"description": "",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Date",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "6.0 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "6.0 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "9.0 Pie",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "9.0 Pie",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "10.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "10.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "7.0 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "7.0 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "11.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "11.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "5.1 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "5.1 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "8.1 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "8.1 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "8.0 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "8.0 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "12.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "12.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "7.1 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "7.1 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.4 KitKat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.4 KitKat",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "13.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "13.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "5.0 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "5.0 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.2 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.2 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.1 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.1 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.3 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.3 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2.3 Gingerbread",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2.3 Gingerbread",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.0 Ice Cream Sandwich",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.0 Ice Cream Sandwich",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2.0 Eclair",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2.0 Eclair",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "27.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "27.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2.2 Froyo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2.2 Froyo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "14.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "14.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "6.1 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "6.1 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Other",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Android_source_dataset",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Android_ouput_dataset",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy desktop",
+				"description": "",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Date",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "6.0 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "6.0 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "9.0 Pie",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "9.0 Pie",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "10.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "10.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "7.0 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "7.0 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "11.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "11.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "5.1 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "5.1 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "8.1 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "8.1 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "8.0 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "8.0 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "12.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "12.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "7.1 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "7.1 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.4 KitKat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.4 KitKat",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "13.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "13.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "5.0 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "5.0 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.2 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.2 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.1 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.1 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.3 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.3 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2.3 Gingerbread",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2.3 Gingerbread",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.0 Ice Cream Sandwich",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.0 Ice Cream Sandwich",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2.0 Eclair",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2.0 Eclair",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "27.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "27.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2.2 Froyo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2.2 Froyo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "14.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "14.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "6.1 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "6.1 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Other",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Desktop_source_dataset",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Desktop_output_dataset",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy IOS",
+				"description": "",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Date",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "6.0 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "6.0 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "9.0 Pie",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "9.0 Pie",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "10.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "10.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "7.0 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "7.0 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "11.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "11.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "5.1 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "5.1 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "8.1 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "8.1 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "8.0 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "8.0 Oreo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "12.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "12.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "7.1 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "7.1 Nougat",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.4 KitKat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.4 KitKat",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "13.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "13.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "5.0 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "5.0 Lollipop",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.2 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.2 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.1 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.1 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.3 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.3 Jelly Bean",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2.3 Gingerbread",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2.3 Gingerbread",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "4.0 Ice Cream Sandwich",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "4.0 Ice Cream Sandwich",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2.0 Eclair",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2.0 Eclair",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "27.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "27.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2.2 Froyo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2.2 Froyo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "14.0",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "14.0",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "6.1 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "6.1 Marshmallow",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Other",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Ios_input_dataset",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Desktop_output_dataset",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-12-20T03:59:02Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,9 @@
+{
+	"name": "mybatch",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "62ab6314-2d25-4d78-a443-f1597c84dc0a",
+		"tenantId": "615ec457-8c9f-4776-a4bc-1b90a2ab05ff"
+	}
+}

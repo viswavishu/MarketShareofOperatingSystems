@@ -1,0 +1,43 @@
+{
+	"name": "MarketShareofOperatingSystems",
+	"properties": {
+		"activities": [
+			{
+				"name": "Source to landing",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "unzipping",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Landing to Raw",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Source to landing",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "loadfiles",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-12-20T03:59:02Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
