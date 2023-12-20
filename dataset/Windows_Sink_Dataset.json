@@ -1,0 +1,126 @@
+{
+	"name": "Windows_Sink_Dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1MovingFiles",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sink Datsets"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "6.0 Marshmallow",
+				"type": "String"
+			},
+			{
+				"name": "9.0 Pie",
+				"type": "String"
+			},
+			{
+				"name": "10.0",
+				"type": "String"
+			},
+			{
+				"name": "7.0 Nougat",
+				"type": "String"
+			},
+			{
+				"name": "11.0",
+				"type": "String"
+			},
+			{
+				"name": "5.1 Lollipop",
+				"type": "String"
+			},
+			{
+				"name": "8.1 Oreo",
+				"type": "String"
+			},
+			{
+				"name": "8.0 Oreo",
+				"type": "String"
+			},
+			{
+				"name": "12.0",
+				"type": "String"
+			},
+			{
+				"name": "7.1 Nougat",
+				"type": "String"
+			},
+			{
+				"name": "4.4 KitKat",
+				"type": "String"
+			},
+			{
+				"name": "13.0",
+				"type": "String"
+			},
+			{
+				"name": "5.0 Lollipop",
+				"type": "String"
+			},
+			{
+				"name": "4.2 Jelly Bean",
+				"type": "String"
+			},
+			{
+				"name": "4.1 Jelly Bean",
+				"type": "String"
+			},
+			{
+				"name": "4.3 Jelly Bean",
+				"type": "String"
+			},
+			{
+				"name": "2.3 Gingerbread",
+				"type": "String"
+			},
+			{
+				"name": "4.0 Ice Cream Sandwich",
+				"type": "String"
+			},
+			{
+				"name": "2.0 Eclair",
+				"type": "String"
+			},
+			{
+				"name": "27.0",
+				"type": "String"
+			},
+			{
+				"name": "2.2 Froyo",
+				"type": "String"
+			},
+			{
+				"name": "14.0",
+				"type": "String"
+			},
+			{
+				"name": "6.1 Marshmallow",
+				"type": "String"
+			},
+			{
+				"name": "Other",
+				"type": "String"
+			}
+		]
+	}
+}

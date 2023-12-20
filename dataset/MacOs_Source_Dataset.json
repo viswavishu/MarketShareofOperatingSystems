@@ -1,0 +1,104 @@
+{
+	"name": "MacOs_Source_Dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1MovingFiles",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source Datasets"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "macos_version_market_share.csv",
+				"folderPath": "MarketShareofOperatingSystems",
+				"fileSystem": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "macOS Catalina",
+				"type": "String"
+			},
+			{
+				"name": "macOS High Sierra",
+				"type": "String"
+			},
+			{
+				"name": "macOS Mojave",
+				"type": "String"
+			},
+			{
+				"name": "macOS Sierra",
+				"type": "String"
+			},
+			{
+				"name": "OS X El Capitan",
+				"type": "String"
+			},
+			{
+				"name": "OS X 10.10",
+				"type": "String"
+			},
+			{
+				"name": "OS X Mavericks",
+				"type": "String"
+			},
+			{
+				"name": "mac OS X Snow Leopard",
+				"type": "String"
+			},
+			{
+				"name": "OS X Mountain Lion",
+				"type": "String"
+			},
+			{
+				"name": "mac OS X Lion",
+				"type": "String"
+			},
+			{
+				"name": "macOS Big Sur 11.2",
+				"type": "String"
+			},
+			{
+				"name": "macOS Big Sur 11.1",
+				"type": "String"
+			},
+			{
+				"name": "macOS Big Sur 11.0",
+				"type": "String"
+			},
+			{
+				"name": "mac OS X Leopard",
+				"type": "String"
+			},
+			{
+				"name": "macOS Big Sur 10.16",
+				"type": "String"
+			},
+			{
+				"name": "mac OS X Tiger",
+				"type": "String"
+			},
+			{
+				"name": "macOS Big Sur 11.3",
+				"type": "String"
+			},
+			{
+				"name": "Other",
+				"type": "String"
+			}
+		]
+	}
+}

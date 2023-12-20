@@ -1,0 +1,84 @@
+{
+	"name": "Windows_Source_Dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1MovingFiles",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source Datasets"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "windows_version_market_share.csv",
+				"folderPath": "MarketShareofOperatingSystems",
+				"fileSystem": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Win7",
+				"type": "String"
+			},
+			{
+				"name": "WinXP",
+				"type": "String"
+			},
+			{
+				"name": "Win10",
+				"type": "String"
+			},
+			{
+				"name": "WinVista",
+				"type": "String"
+			},
+			{
+				"name": "Win8.1",
+				"type": "String"
+			},
+			{
+				"name": "Win8",
+				"type": "String"
+			},
+			{
+				"name": "Win11",
+				"type": "String"
+			},
+			{
+				"name": "Win2003",
+				"type": "String"
+			},
+			{
+				"name": "Win2000",
+				"type": "String"
+			},
+			{
+				"name": "Win98",
+				"type": "String"
+			},
+			{
+				"name": "Win8.1 RT",
+				"type": "String"
+			},
+			{
+				"name": "WinME",
+				"type": "String"
+			},
+			{
+				"name": "Other",
+				"type": "String"
+			}
+		]
+	}
+}

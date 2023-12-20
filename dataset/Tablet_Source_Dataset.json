@@ -1,0 +1,64 @@
+{
+	"name": "Tablet_Source_Dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1MovingFiles",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source Datasets"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "tablet_os_market_share.csv",
+				"folderPath": "MarketShareofOperatingSystems",
+				"fileSystem": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "iOS",
+				"type": "String"
+			},
+			{
+				"name": "Android",
+				"type": "String"
+			},
+			{
+				"name": "Linux",
+				"type": "String"
+			},
+			{
+				"name": "Windows",
+				"type": "String"
+			},
+			{
+				"name": "BlackBerry OS",
+				"type": "String"
+			},
+			{
+				"name": "Unknown",
+				"type": "String"
+			},
+			{
+				"name": "webOS",
+				"type": "String"
+			},
+			{
+				"name": "Other",
+				"type": "String"
+			}
+		]
+	}
+}

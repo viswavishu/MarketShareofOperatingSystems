@@ -1,0 +1,116 @@
+{
+	"name": "OS_Combined_Source_Dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1MovingFiles",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source Datasets"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "os_combined_market_share.csv",
+				"folderPath": "MarketShareofOperatingSystems",
+				"fileSystem": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Windows",
+				"type": "String"
+			},
+			{
+				"name": "Android",
+				"type": "String"
+			},
+			{
+				"name": "iOS",
+				"type": "String"
+			},
+			{
+				"name": "OS X",
+				"type": "String"
+			},
+			{
+				"name": "Unknown",
+				"type": "String"
+			},
+			{
+				"name": "Linux",
+				"type": "String"
+			},
+			{
+				"name": "Series 40",
+				"type": "String"
+			},
+			{
+				"name": "SymbianOS",
+				"type": "String"
+			},
+			{
+				"name": "Samsung",
+				"type": "String"
+			},
+			{
+				"name": "BlackBerry OS",
+				"type": "String"
+			},
+			{
+				"name": "Chrome OS",
+				"type": "String"
+			},
+			{
+				"name": "Nokia Unknown",
+				"type": "String"
+			},
+			{
+				"name": "Playstation",
+				"type": "String"
+			},
+			{
+				"name": "Sony Ericsson",
+				"type": "String"
+			},
+			{
+				"name": "KaiOS",
+				"type": "String"
+			},
+			{
+				"name": "Xbox",
+				"type": "String"
+			},
+			{
+				"name": "bada",
+				"type": "String"
+			},
+			{
+				"name": "Tizen",
+				"type": "String"
+			},
+			{
+				"name": "LG",
+				"type": "String"
+			},
+			{
+				"name": "Nintendo",
+				"type": "String"
+			},
+			{
+				"name": "Other",
+				"type": "String"
+			}
+		]
+	}
+}
