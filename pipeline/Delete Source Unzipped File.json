@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "Binary1",
+						"referenceName": "Delete_Dataset",
 						"type": "DatasetReference"
 					},
 					"logStorageSettings": {

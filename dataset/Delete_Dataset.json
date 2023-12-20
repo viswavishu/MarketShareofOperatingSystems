@@ -1,5 +1,5 @@
 {
-	"name": "Binary1",
+	"name": "Delete_Dataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1MovingFiles",
