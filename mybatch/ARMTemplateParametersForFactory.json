@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "mybatch"
+		},
+		"AzureBatch1_accessKey": {
+			"value": ""
+		},
+		"AzureBlobStoragegen2_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureBatch1_properties_typeProperties_batchUri": {
+			"value": "https://unzipping.eastus.batch.azure.com"
+		},
+		"AzureBatch1_properties_typeProperties_poolName": {
+			"value": "custom-activity-pool"
+		},
+		"AzureBatch1_properties_typeProperties_accountName": {
+			"value": "unzipping"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://batchdotnet.dfs.core.windows.net/"
+		}
+	}
+}
