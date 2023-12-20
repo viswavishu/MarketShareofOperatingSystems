@@ -41,7 +41,7 @@
 									"referenceName": "AzureDataLakeStorage1MovingFiles",
 									"type": "LinkedServiceReference"
 								},
-								"path": "output"
+								"path": "output/Delete Logs"
 							},
 							"enableLogging": true,
 							"storeSettings": {
